@@ -11,6 +11,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('biz', BizViews.as_view()),
     path('blog', BlogViews.as_view()),
+    path('video', VideoViews.as_view()),
     path('blog/<int:id>',blog_detail),
     
 

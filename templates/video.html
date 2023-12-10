@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+ <!-- Courses Start -->
+
+ 
+ <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="blog">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Video kontentlar</h6>
+            <h1 class="mb-5">Video kontentlar</h1>
+        </div>
+        <div class="row g-4">
+            {% for video in Video %}
+            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item bg-light">
+                    <div class="position-relative overflow-hidden">
+                        <iframe width="100%" height="315" src="{{ video.link }}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-center p-4 pb-0">
+                        <h5 class="mb-4">Video nomi: {{ video.nomi }}</h5>
+                        <p>Yuklandi: {{ video.sana }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+{% endblock content %}

@@ -23,7 +23,9 @@ class Kurslar(models.Model):
     kurs_davomiyligi = models.CharField(max_length=200)
     dars_davomiyligi = models.CharField(max_length=200)
     narxi = models.CharField(max_length=100)
+    oqituvchi = models.CharField(max_length=13)
     boglanish = models.CharField(max_length=13)
+    
     def __str__(self):
         return f"{self.nomi} | {self.kurs_davomiyligi} | {self.narxi}"
     class Meta:
@@ -91,5 +93,15 @@ class Blog(models.Model):
         verbose_name = 'Blog'
         verbose_name_plural = "Bloglar"
         
-        
+
+
+class VideoKontent(models.Model):
+    nomi = models.CharField(max_length=500)
+    sana = models.DateTimeField()
+    link = models.URLField(help_text="youtu.be ning o'rniga youtube.com/embed so'zini kiriting")
+    def __str__(self):
+        return f"{self.nomi}"
+    class Meta:
+        verbose_name = 'ViVideo Kontent'
+        verbose_name_plural = "Video kontentlar"
         
