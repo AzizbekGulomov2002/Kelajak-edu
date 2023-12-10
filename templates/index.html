@@ -81,52 +81,36 @@
 
 
     
-        <div class="container-xxl py-5" id="kurs">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">Kurslar</h6>
-                    <h1 class="mb-5">Barcha mavjud kurslar</h1>
-                </div>
-                <div class="row g-4 ">
-                    <div class="col-lg-12">
-                        <!-- Kurslar bo'yicha Carousel qismi -->
-                        <div  class="owl-carousel testimonial-carousel position-relative">
-                            {% for k in Kurslar %}
-                            <div style="box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);" class="testimonial-item text-center">
-                                <div  class="team-item bg-light wow fadeInUp" data-wow-delay="0.1s">
-                                    <div class="overflow-hidden square-image-container">
-                                        <img class="img-fluid square-image" src="{{ k.rasm.url }}" alt="">
-                                    </div>
-                                </div>
-                                <div style="font-size: 15px; display: table;" class="text-start p-4">
-                                    <div style="display: table-row;">
-                                        <div style="display: table-cell;">Kurs nomi:</div>
-                                        <div style="display: table-cell;"><strong>{{ k.nomi }}</strong></div>
-                                    </div>
-                                    <div style="display: table-row;">
-                                        <div style="display: table-cell;">Kurs davomiyligi:</div>
-                                        <div style="display: table-cell;"><strong>{{ k.kurs_davomiyligi }}</strong></div>
-                                    </div>
-                                    <div style="display: table-row;">
-                                        <div style="display: table-cell;">Dars davomiyligi:</div>
-                                        <div style="display: table-cell;"><strong>{{ k.dars_davomiyligi }}</strong></div>
-                                    </div>
-                                    <div style="display: table-row;">
-                                        <div style="display: table-cell;">Kurs narxi:</div>
-                                        <div style="display: table-cell;"><strong>{{ k.narxi }} so‘m</strong></div>
-                                    </div>
-                                    <div style="display: table-row;">
-                                        <div style="display: table-cell;"><a style="width: 100% !important;" href="tel: {{ k.boglanish }}" class="btn btn-primary btn-sm mt-3">Bog'lanish</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>   
-            </div>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Kurslar</h6>
+            <h1 class="mb-5">Barcha mavjud kurslar</h1>
         </div>
-    
+        <div class="row g-4">
+            {% for kurs in Kurslar %}
+            <div class="col-lg-3 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{{ kurs.rasm.url }}" alt="">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Kurs nomi: {{ kurs.nomi }}</h5><br>
+                        <small>Kurs davomiyligi: {{ kurs.kurs_davomiyligi }}</small><br>
+                        <small>Kurs davomiyligi: {{ kurs.oqituvchi }}</small><br>
+                        <small>Dars davomiyligi: {{ kurs.dars_davomiyligi }}</small><br>
+                        <small>Kurs narxi: {{ kurs.narxi }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
     
     
 
