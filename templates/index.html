@@ -81,43 +81,30 @@
 
 
     
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        {% for kurs_chunk in Kurslar|batch:4 %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <div class="container-xxl py-5">
-                <div class="container">
-                    <div class="row g-4">
-                        {% for kurs in kurs_chunk %}
-                        <div class="col-lg-3 col-md-3">
-                            <div class="team-item bg-light">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid" src="{{ kurs.rasm.url }}" alt="">
-                                </div>
-                                <div class="text-center p-4">
-                                    <h5 class="mb-0">Kurs nomi: {{ kurs.nomi }}</h5><br>
-                                    <small>Kurs davomiyligi: {{ kurs.kurs_davomiyligi }}</small><br>
-                                    <small>Kurs davomiyligi: {{ kurs.oqituvchi }}</small><br>
-                                    <small>Dars davomiyligi: {{ kurs.dars_davomiyligi }}</small><br>
-                                    <small>Kurs narxi: {{ kurs.narxi }}</small>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Kurslar</h6>
+            <h1 class="mb-5">Bizning barcha Kurslar</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            {% for kurs in Kurslar %}
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ kurs.rasm.url }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Kurs nomi: {{ kurs.nomi }}</h5>
+                <p>O'qituvchi: {{ kurs.oqituvchi }}</p>
+                <div class="testimonial-text text-center p-4">
+                    <p class="mb-0">Kurs davomiyligi: {{ kurs.kurs_davomiyligi }}</p>
+                    <p>Dars davomiyligi: {{ kurs.dars_davomiyligi }}</p>
+                    <p>Kurs narxi: {{ kurs.narxi }}</p>
+                    <a href="{{ kurs.boglanish }}" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i> Bog'lanish
+                    </a>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Oldingi</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Keyingi</span>
-    </button>
 </div>
 
 
@@ -185,51 +172,68 @@
     </div>
     
 
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="jamoa">
+    <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Jamoa</h6>
-                <h1 class="mb-5">Bizning jamoa</h1>
+                <h1 class="mb-5">Jamoa</h1>
             </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                {% for j in Jamoa %}
-                <div class="testimonial-item text-center">
-                    <img style="width: 300px;height: 300px;object-fit: cover;margin-bottom: 15px; " src="{{ j.rasm.url }}" alt="{{ j.ism_sharif }}">
-                    <h5 class="mb-0">{{ j.ism_sharif }}</h5>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">{{ j.vazifa }}</p>
+            <div class="row g-4">
+                {% for instructor in Jamoa %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ instructor.rasm.url }}" alt="{{ instructor.ism_sharif }}" style="height: 250px; width: 100%">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-telegram"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h6 class="mb-0">Ism sharif: {{ instructor.ism_sharif }}</h6>
+                            <small>Lavozim: {{ instructor.vazifa }}</small>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
     
     
     
 <!-- Courses End -->
 
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Bitiruvchilar</h6>
-                <h1 class="mb-5">Bizning bitiruvchilar</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                {% for b in Bitiruvchi %}
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ b.rasm.url }}"
-                        style="width: 100px; height: 100px;">
-                    <h5 class="mb-0">{{ b.ism_sharif }}</h5>
-                    <p>{{ b.profession }}</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">{{ b.tarix }}</p>
-                    </div>
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Bitiruvchilar</h6>
+            <h1 class="mb-5">Bizning bitiruvchilar</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            {% for b in Bitiruvchi %}
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ b.rasm.url }}"
+                    style="width: 100px; height: 100px;">
+                <h5 class="mb-0">{{ b.ism_sharif }}</h5>
+                <p>{{ b.profession }}</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">{{ b.tarix|slice:":150" }}</p>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
+</div>
+
 
 
 </body>

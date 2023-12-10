@@ -102,6 +102,6 @@ class VideoKontent(models.Model):
     def __str__(self):
         return f"{self.nomi}"
     class Meta:
-        verbose_name = 'ViVideo Kontent'
+        verbose_name = 'Video Kontent'
         verbose_name_plural = "Video kontentlar"
         
