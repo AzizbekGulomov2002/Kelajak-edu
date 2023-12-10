@@ -61,6 +61,9 @@ class Jamoa(models.Model):
     rasm = models.ImageField(upload_to='jamoa_rasm')
     ism_sharif = models.CharField(max_length=200)
     vazifa = models.CharField(max_length=200)
+    telegram = models.CharField(max_length=200,null=True, blank=True)
+    telefon = models.CharField(max_length=200,null=True, blank=True)
+    instagram = models.CharField(max_length=200,null=True, blank=True)
     def __str__(self):
         return f"{self.ism_sharif}"
     class Meta:
