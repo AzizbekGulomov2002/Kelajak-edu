@@ -81,38 +81,32 @@
 
 
     
-<div class="container-xxl py-5">
-    <div class="container">
-        <style>
-            /* CSS qismi */
-            .team-item {
-                height: 450px; /* Cardning balandligi */
-            }
-        </style>
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Kurslar</h6>
-            <h1 class="mb-5">Barcha mavjud kurslar</h1>
-        </div>
-        <div class="row g-4">
-            {% for kurs in Kurslar %}
-            <div class="col-lg-3 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item bg-light">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="{{ kurs.rasm.url }}" alt="">
-                    </div>
-                    <div class="text-center p-4">
-                        <h5 class="mb-0">Kurs nomi: {{ kurs.nomi }}</h5><br>
-                        <small>Kurs davomiyligi: {{ kurs.kurs_davomiyligi }}</small><br>
-                        <small>Kurs davomiyligi: {{ kurs.oqituvchi }}</small><br>
-                        <small>Dars davomiyligi: {{ kurs.dars_davomiyligi }}</small><br>
-                        <small>Kurs narxi: {{ kurs.narxi }}</small>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        {% for kurs in Kurslar %}
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %} aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+        {% endfor %}
     </div>
-</div>
+    <div class="carousel-inner">
+        {% for kurs in Kurslar %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ kurs.rasm.url }}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Kurs nomi: {{ kurs.nomi }}</h5>
+                <p>Kurs davomiyligi: {{ kurs.kurs_davomiyligi }}</p>
+                <p>O'qituvchi: {{ kurs.oqituvchi }}</p>
+                <p>Dars davomiyligi: {{ kurs.dars_davomiyligi }}</p>
+                <p>Kurs narxi: {{ kurs.narxi }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Oldingi</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselE
+
 
 
 
