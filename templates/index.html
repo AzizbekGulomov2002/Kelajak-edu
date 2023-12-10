@@ -83,11 +83,12 @@
     
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        {% for kurs in Kurslar %}
+        {% for kurs_chunk in Kurslar|batch:4 %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
             <div class="container-xxl py-5">
                 <div class="container">
                     <div class="row g-4">
+                        {% for kurs in kurs_chunk %}
                         <div class="col-lg-3 col-md-3">
                             <div class="team-item bg-light">
                                 <div class="overflow-hidden">
@@ -102,6 +103,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -117,6 +119,7 @@
         <span class="visually-hidden">Keyingi</span>
     </button>
 </div>
+
 
 
 
