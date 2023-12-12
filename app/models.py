@@ -8,6 +8,11 @@ class Markaz(models.Model):
     malumot = models.TextField()
     email = models.CharField(max_length=100, null=True, blank=True)
     telefon = models.IntegerField(null=True, blank=True)
+
+    oquvchilar = models.IntegerField()
+    yonalishlar = models.IntegerField()
+    kurslar = models.IntegerField()
+    hodimlar = models.IntegerField()
     def __str__(self):
         return f"{self.markaz_nomi} | {self.email} | {self.telefon}"
     class Meta:
