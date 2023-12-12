@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
 class Markaz(models.Model):
     rasm = models.ImageField(upload_to='jamoa_rasm')
     markaz_nomi = models.CharField(max_length=200)
