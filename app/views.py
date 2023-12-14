@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 
 from django.views.generic import ListView
-from .models import Markaz, Kurslar, Xizmatlar, Galereya, Jamoa, Bitiruvchi, Blog,VideoKontent
+from .models import Markaz, Kurslar, Xizmatlar, Galereya, Jamoa,  Blog
 
 
 class BizViews(ListView):
@@ -25,10 +25,10 @@ def blog_detail(request,id):
     blogs.save()
     return render(request,'blog.html',{"blogs":blogs})
 
-class VideoViews(ListView):
-    model = VideoKontent
-    template_name = "video.html"
-    context_object_name = "Video"
+# class VideoViews(ListView):
+#     model = VideoKontent
+#     template_name = "video.html"
+#     context_object_name = "Video"
     
 def index(request):
     markaz = Markaz.objects.all()
@@ -36,15 +36,15 @@ def index(request):
     xizmatlar = Xizmatlar.objects.all()
     galereya = Galereya.objects.all()
     jamoa = Jamoa.objects.all()
-    bitiruvchi = Bitiruvchi.objects.all()
+    # bitiruvchi = Bitiruvchi.objects.all()
     blog = Blog.objects.all()
     contex = {
         'Markaz':markaz,
         'Kurslar':kurslar,
         'Xizmatlar':xizmatlar,
         'Jamoa':jamoa,
-        'Bitiruvchi':bitiruvchi,
+        # 'Bitiruvchi':bitiruvchi,
         'Galereya':galereya,
         'Blog':blog,
     }
-    return render(request, ['index.html','about.html','blog.html'] , contex)
+    return render(request, ['index.html','blog.html'] , contex)

@@ -6,8 +6,13 @@ class Markaz(models.Model):
     rasm = models.ImageField(upload_to='jamoa_rasm')
     markaz_nomi = models.CharField(max_length=200)
     malumot = models.TextField()
+    
+    
     email = models.CharField(max_length=100, null=True, blank=True)
     telefon = models.IntegerField(null=True, blank=True)
+    telegram = models.CharField(max_length=200)
+    instagram = models.CharField(max_length=200)
+    youtube = models.CharField(max_length=200)
 
     oquvchilar = models.IntegerField()
     yonalishlar = models.IntegerField()
@@ -40,7 +45,6 @@ class Kurslar(models.Model):
 class Xizmatlar(models.Model):
     rasm = models.ImageField(upload_to='jamoa_rasm')
     nomi = models.CharField(max_length=200)
-    batafsil = models.TextField(null=True, blank=True)
     def __str__(self):
         return f"{self.nomi}"
     class Meta:
@@ -76,15 +80,15 @@ class Jamoa(models.Model):
         
         
 
-class Bitiruvchi(models.Model):
-    rasm = models.ImageField(upload_to='jamoa_rasm')
-    ism_sharif = models.CharField(max_length=200)
-    tarix = models.TextField(null=True, blank=True)
-    def __str__(self):
-        return f"{self.ism_sharif}"
-    class Meta:
-        verbose_name = 'Bitiruvchi'
-        verbose_name_plural = "Bitiruvchilar"
+# class Bitiruvchi(models.Model):
+#     rasm = models.ImageField(upload_to='jamoa_rasm')
+#     ism_sharif = models.CharField(max_length=200)
+#     tarix = models.TextField(null=True, blank=True)
+#     def __str__(self):
+#         return f"{self.ism_sharif}"
+#     class Meta:
+#         verbose_name = 'Bitiruvchi'
+#         verbose_name_plural = "Bitiruvchilar"
         
         
 
@@ -102,13 +106,13 @@ class Blog(models.Model):
         
 
 
-class VideoKontent(models.Model):
-    nomi = models.CharField(max_length=500)
-    sana = models.DateTimeField()
-    link = models.URLField(help_text="youtu.be ning o'rniga youtube.com/embed so'zini kiriting")
-    def __str__(self):
-        return f"{self.nomi}"
-    class Meta:
-        verbose_name = 'Video Kontent'
-        verbose_name_plural = "Video kontentlar"
+# class VideoKontent(models.Model):
+#     nomi = models.CharField(max_length=500)
+#     sana = models.DateTimeField()
+#     link = models.URLField(help_text="youtu.be ning o'rniga youtube.com/embed so'zini kiriting")
+#     def __str__(self):
+#         return f"{self.nomi}"
+#     class Meta:
+#         verbose_name = 'Video Kontent'
+#         verbose_name_plural = "Video kontentlar"
         

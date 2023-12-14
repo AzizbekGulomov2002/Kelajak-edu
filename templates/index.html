@@ -12,7 +12,7 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="biz">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-5 mb-5 mb-lg-0">
@@ -69,7 +69,7 @@
 
 
  <!-- Team Start -->
- <div class="container-fluid py-5">
+ <div class="container-fluid py-5" id="kurslar">
     <div class="container py-5">
         <div class="section-title text-center position-relative mb-5">
             <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Kurslar</h6>
@@ -79,7 +79,8 @@
         <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
             {% for k in Kurslar %}
             <div class="team-item">
-                <img class="img-fluid w-100" src="{{ k.rasm.url }}" alt="">
+                <img class="img-fluid w-100" src="{{ k.rasm.url }}" alt="" style="width: 300px; height: 200px; object-fit: cover;">
+                <!-- Change width and height values as needed -->
                 <div class="bg-light text-center p-4">
                     <h5 class="mb-3">Kurs nomi: {{ k.nomi }}</h5>
                     <p class="mb-2">Kurs davomiyligi: {{ k.kurs_davomiyligi }}</p>
@@ -98,6 +99,7 @@
         
     </div>
 </div>
+
 
 
 <!-- Team End -->
@@ -124,7 +126,7 @@
                             <img class="img-fluid mr-4" src="{{ jamoa.rasm.url }}" alt="{{ jamoa.ism_sharif }}">
                             <div>
                                 <h5>Ism sharif: {{ jamoa.ism_sharif }}</h5>
-                                {% if jamoa.telegram %}
+                                {% comment %} {% if jamoa.telegram %}
                                 <span>{{ jamoa.telegram }}</span>
                                 {% endif %}
                                 {% if jamoa.telefon %}
@@ -132,7 +134,7 @@
                                 {% endif %}
                                 {% if jamoa.instagram %}
                                 <span>{{ jamoa.instagram }}</span>
-                                {% endif %}
+                                {% endif %} {% endcomment %}
                             </div>
                         </div>
                     </div>
@@ -150,7 +152,7 @@
         <div class="col-lg-6">
             <div class="section-title text-center position-relative mb-4">
                 <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Galereya</h6>
-                <h1 class="display-4">Galereya</h1>
+                <h1 class="display-4">Bizning galereya</h1>
             </div>
         </div>
     </div>
@@ -180,78 +182,27 @@
         
         
     </div>
-    
-
 </div>
 
-
-    <!-- Contact Start -->
-    {% comment %} <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <div class="bg-light d-flex flex-column justify-content-center px-5" style="height: 450px;">
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="btn-icon bg-primary mr-4">
-                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div class="mt-n1">
-                                <h4>Our Location</h4>
-                                <p class="m-0">123 Street, New York, USA</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="btn-icon bg-secondary mr-4">
-                                <i class="fa fa-2x fa-phone-alt text-white"></i>
-                            </div>
-                            <div class="mt-n1">
-                                <h4>Call Us</h4>
-                                <p class="m-0">+012 345 6789</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="btn-icon bg-warning mr-4">
-                                <i class="fa fa-2x fa-envelope text-white"></i>
-                            </div>
-                            <div class="mt-n1">
-                                <h4>Email Us</h4>
-                                <p class="m-0">info@example.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
-                        <h1 class="display-4">Send Us A Message</h1>
-                    </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="row">
-                                <div class="col-6 form-group">
-                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Name" required="required">
-                                </div>
-                                <div class="col-6 form-group">
-                                    <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Email" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Subject" required="required">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Message" required="required"></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid py-5" id="kurslar">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative mb-5">
+            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Xizmatlar</h6>
+            <h1 class="display-4">Xizmatlar</h1>
         </div>
-    </div> {% endcomment %}
-    <!-- Contact End -->
-
+        
+        <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+            {% for x in Xizmatlar %}
+            <div class="team-item">
+                <img class="img-fluid w-100" src="{{ x.rasm.url }}" alt="" style="width: 300px; height: 200px; object-fit: cover;"><br>
+                <h5 style="text-align: center;" class="mb-5">Xizmat: {{ x.nomi }}</h5>
+              
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
 
 
     <!-- Back to Top -->

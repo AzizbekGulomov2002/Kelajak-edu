@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    
+
+
+
+<!-- Team End -->
+<h2 style="text-align: center;">
+    Blog sahifa
+</h2>
+
+<div class="container-fluid bg-image py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+        <div class="row">
+            {% for post in Blog %}
+            <div class="col-lg-6 mb-4">
+                <div class="section-title position-relative mb-4">
+                    <h1 style="text-align: center;font-size: 30px;" class="display-4"><span style="font-size: 30px;">#{{ post.id }}</span>  {{ post.nom }}</h1>
+                </div>  
+                <img src="{{ post.rasm.url }}" alt="{{ post.nom }}" class="img-fluid" style="width: 100%;"> <!-- Rasmlarga max-width: 400px; stilini qo'shing -->
+                <p style="text-align: center;" class="m-2">{{ post.batafsil }}</p>
+                <b><p style="text-align: center;" class="m-3">Sana: {{ post.sana }}</p></b>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+</body>
+
+</html>
+
+
+{% endblock %}
