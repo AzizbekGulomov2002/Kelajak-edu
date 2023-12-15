@@ -32,7 +32,7 @@ class Kurslar(models.Model):
     kurs_davomiyligi = models.CharField(max_length=200)
     dars_davomiyligi = models.CharField(max_length=200)
     narxi = models.CharField(max_length=100)
-    oqituvchi = models.CharField(max_length=13)
+    oqituvchi = models.CharField(max_length=200)
     boglanish = models.CharField(max_length=13)
     
     def __str__(self):
