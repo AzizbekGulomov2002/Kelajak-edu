@@ -83,14 +83,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'kelajak_db',  # Replace 'your_database_name' with the actual name of your database
-            'USER': 'postgres',
-            'PASSWORD': 'kelajak2023',
-            'HOST': '95.130.227.185',
-            'PORT': '5432',
-        }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'kelajak_db',  # Replace 'kelajak_db' with the actual name of your PostgreSQL database
+        'USER': 'postgres',
+        'PASSWORD': 'kelajak2023',
+        'HOST': '95.130.227.185',
+        'PORT': '5432',
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
