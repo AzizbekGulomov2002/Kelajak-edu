@@ -72,25 +72,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kelajak_db',  # Replace 'kelajak_db' with the actual name of your PostgreSQL database
-        'USER': 'postgres',
-        'PASSWORD': 'kelajak2023',
-        'HOST': '95.130.227.185',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'kelajak_db',  # Replace 'kelajak_db' with the actual name of your PostgreSQL database
+#         'USER': 'postgres',
+#         'PASSWORD': 'kelajak2023',
+#         'HOST': '95.130.227.185',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
