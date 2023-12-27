@@ -48,12 +48,17 @@ INSTALLED_APPS = [
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
 
+SECURE_SSL_REDIRECT = False
+
+
 
 MIDDLEWARE = [
     # 'django.middleware.security.SecurityMiddleware',
     
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    
+    'django.middleware.common.CommonMiddleware',
     
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
