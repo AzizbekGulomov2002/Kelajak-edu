@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'insecure-j+fp-@f&d8kseko9%lil1hm1d^0j=#y*qi2^1uy#zdj_uffs=x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ["http://95.130.227.185/","https://kelajak-edu.uz/"]
