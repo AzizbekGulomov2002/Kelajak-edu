@@ -26,7 +26,7 @@ SECRET_KEY = 'insecure-j+fp-@f&d8kseko9%lil1hm1d^0j=#y*qi2^1uy#zdj_uffs=x'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["http://95.130.227.185/","https://kelajak-edu.uz/"]
+ALLOWED_HOSTS = ["95.130.227.185"]
 
 
 # Application definition
